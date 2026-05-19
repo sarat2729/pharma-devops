@@ -1,4 +1,4 @@
-name: "CI/CD — Pharma UI"
+name: "CI/CD - Pharma UI"
 
 on:
   push:

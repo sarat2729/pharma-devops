@@ -1,4 +1,4 @@
-name: "CI/CD — Drug Catalog Service"
+name: "CI/CD - Drug Catalog Service"
 
 on:
   push:

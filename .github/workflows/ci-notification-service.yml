@@ -1,4 +1,4 @@
-name: "CI/CD — Notification Service"
+name: "CI/CD - Notification Service"
 
 on:
   push:
