@@ -1,0 +1,20 @@
+name: "CI/CD — Notification Service"
+
+on:
+  push:
+    branches: [main, develop, "feature/**", "bugfix/**", "hotfix/**"]
+    paths:
+      - "services/notification-service/**"
+      - ".github/workflows/ci-notification-service.yml"
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - "services/notification-service/**"
+
+jobs:
+  ci-cd:
+    uses: ./.github/workflows/_reusable-nodejs.yml
+    with:
+      service-name: notification-service
+      service-path: services/notification-service
+    secrets: inherit

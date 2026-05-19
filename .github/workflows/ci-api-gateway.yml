@@ -1,0 +1,20 @@
+name: "CI/CD — API Gateway"
+
+on:
+  push:
+    branches: [main, develop, "feature/**", "bugfix/**", "hotfix/**"]
+    paths:
+      - "services/api-gateway/**"
+      - ".github/workflows/ci-api-gateway.yml"
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - "services/api-gateway/**"
+
+jobs:
+  ci-cd:
+    uses: ./.github/workflows/_reusable-springboot.yml
+    with:
+      service-name: api-gateway
+      service-path: services/api-gateway
+    secrets: inherit

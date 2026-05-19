@@ -1,0 +1,20 @@
+name: "CI/CD — Drug Catalog Service"
+
+on:
+  push:
+    branches: [main, develop, "feature/**", "bugfix/**", "hotfix/**"]
+    paths:
+      - "services/drug-catalog-service/**"
+      - ".github/workflows/ci-catalog-service.yml"
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - "services/drug-catalog-service/**"
+
+jobs:
+  ci-cd:
+    uses: ./.github/workflows/_reusable-springboot.yml
+    with:
+      service-name: drug-catalog-service
+      service-path: services/drug-catalog-service
+    secrets: inherit
